@@ -2,11 +2,14 @@
 :root {
   --primary: teal;
   --secondary: lightblue;
+  --white: #f5f5f5;
+  --black: #333333;
   --font--xl: 2.5rem;
   --font--large: 1.25rem;
   --font--medium: 1.125rem;
   --primary--font: 'Roboto Condensed', sans-serif;
   --secondary--font: 'Cabin', sans-serif;
+  --radius: 2px;
 }
 
 html, body {
@@ -43,19 +46,24 @@ a {
 }
 
 .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Elements */
+
+.nav__item {
+ font-family: var(--primary--font);
+ padding: .5rem 1rem;
+}
+
+.nav__wrapper {
   list-style: none;
   display: flex;
   padding: 0;
   margin: 0;
 }
-
-/* Elements */
-
-.menu__item {
- font-family: var(--primary--font);
- padding: .5rem 1rem;
-}
-
 
 /* Modifiers */
 
@@ -65,4 +73,15 @@ a {
 
 .title--secondary {
   color: var(--secondary);
+}
+
+.nav__item--primary {
+  background-color: var(--primary);
+  border-radius: var(--radius);
+  color: var(--white);
+}
+
+.nav__item--primary:hover, .nav__item--primary:active {
+  background: var(--secondary);
+  color: var(--black);
 }
